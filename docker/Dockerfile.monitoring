@@ -1,0 +1,16 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt
+
+COPY monitoring /app/monitoring
+COPY src /app/src
+
+# needs access to registry/, logs/, reports/
+CMD ["python", "-m", "monitoring.evidently_job"]

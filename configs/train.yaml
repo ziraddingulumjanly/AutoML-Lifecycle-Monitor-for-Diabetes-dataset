@@ -1,0 +1,23 @@
+# Training configuration
+# If target is null, the system will auto-detect it.
+dataset:
+  path: data/dataset.csv   # can be local path; scripts/ingest.py can copy from a URL too
+  format: csv              # csv | json | parquet
+  target: null
+  test_size: 0.2
+  val_size: 0.2
+  random_seed: 42
+
+training:
+  task: auto               # auto | classification | regression
+  cv_folds: 5
+  metric: auto             # auto chooses roc_auc for binary cls, f1 for multiclass, rmse for regression
+  models:
+    - ridge
+    - random_forest
+    - gradient_boosting
+    - xgboost_optional
+
+registry:
+  dir: registry
+  auto_approve: true       # if true, best model is approved and becomes production

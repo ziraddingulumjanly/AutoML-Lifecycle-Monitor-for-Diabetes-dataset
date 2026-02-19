@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mlops-config
+  namespace: mlops
+data:
+  REGISTRY_DIR: "/app/registry"
+  LOG_DIR: "/app/logs"
