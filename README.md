@@ -1,6 +1,7 @@
 # End-to-End Production-Style MLOps Project (AutoML + Registry + FastAPI + Docker + K8s + Monitoring)
 
 This repository is generated to run an **end-to-end lifecycle**:
+<img width="1919" height="308" alt="Screenshot 2026-02-19 190622" src="https://github.com/user-attachments/assets/9d91ff15-f6fc-4259-8829-faf60db25688" />
 
 **DATA → TRAIN → PACKAGE → SERVE → CONTAINERIZE → DEPLOY → MONITOR → DECIDE → RETRAIN LOOP**
 
